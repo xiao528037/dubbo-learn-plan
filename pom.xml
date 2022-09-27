@@ -10,80 +10,40 @@
     <description>dubbo-learn-plan</description>
     <packaging>pom</packaging>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <spring.version>4.3.16.RELEASE</spring.version>
-        <dubbo.version>3.0.7</dubbo.version>
-        <junit.version>4.13.1</junit.version>
-        <slf4j-log4j12.version>1.7.25</slf4j-log4j12.version>
-        <spring-boot.version>2.3.1.RELEASE</spring-boot.version>
-        <spring-boot-maven-plugin.version>2.1.4.RELEASE</spring-boot-maven-plugin.version>
-    </properties>
     <modules>
         <module>dubbo-learn-01</module>
     </modules>
 
     <dependencyManagement>
-        <dependencies>
-            <!-- Spring Boot -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-bom</artifactId>
-                <version>${dubbo.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-dependencies-zookeeper</artifactId>
-                <version>${dubbo.version}</version>
-                <type>pom</type>
-            </dependency>
-
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.18.24</version>
-            </dependency>
-        </dependencies>
+          <dependencies>
+              <dependency>
+                  <groupId>org.springframework.boot</groupId>
+                  <artifactId>spring-boot-starter-web</artifactId>
+                  <version>2.7.3</version>
+              </dependency>
+              <dependency>
+                  <groupId>org.apache.dubbo</groupId>
+                  <artifactId>dubbo-spring-boot-starter</artifactId>
+                  <version>3.0.7</version>
+              </dependency>
+              <dependency>
+                  <groupId>org.apache.dubbo</groupId>
+                  <artifactId>dubbo-rpc-dubbo</artifactId>
+                  <version>3.0.7</version>
+              </dependency>
+              <dependency>
+                  <groupId>org.apache.dubbo</groupId>
+                  <artifactId>dubbo-registry-zookeeper</artifactId>
+                  <version>3.0.7</version>
+              </dependency>
+              <dependency>
+                  <groupId>org.projectlombok</groupId>
+                  <artifactId>lombok</artifactId>
+                  <version>1.18.24</version>
+              </dependency>
+          </dependencies>
     </dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j-log4j12.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
     <build>
         <plugins>
             <plugin>
